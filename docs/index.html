@@ -33,9 +33,9 @@
     <h1>A carbon registry built on open APIs, <em>anchored on chain.</em></h1>
     <p class="lead">The registry records carbon activities, land parcels, verifications and certificates. It turns verified facts into tokens on the OGCR blockchain. Every app, service and AI agent works through the same secure APIs.</p>
     <div class="actions">
-      <a class="btn primary" href="https://portal.dcr.ogcr.tesobe.com/">Try the OGCR Sandbox</a>
       <a class="btn ghost" href="#how">See how it works</a>
       <a class="btn ghost" href="https://apiexplorer.dcr.ogcr.tesobe.com/?content=dynamic&amp;bank_id=ogcr">Browse the registry APIs</a>
+      <a class="btn primary" href="https://portal.dcr.ogcr.tesobe.com/">Try the OGCR Sandbox</a>
     </div>
     <ul class="facts">
       <li>Built on OBP-API</li>
@@ -326,6 +326,23 @@
         </div>
       </article>
 
+      <article class="component reveal">
+        <div>
+          <span class="tag">Security and performance</span>
+          <h3><a href="https://senti.tesobe.com">OBP Senti</a></h3>
+          <a class="repo" href="https://github.com/OpenBankProject/OBP-Sentinel">OpenBankProject/OBP-Sentinel</a>
+        </div>
+        <div>
+          <p>OBP Senti is an AI agent that keeps watch over the registry. It reads the logs, metrics and telemetry of the running services, reviews the source code behind every endpoint that can be reached, and reports the few security and performance fixes that matter most.</p>
+          <ul>
+            <li>Looks for security problems, such as missing authorisation checks or SQL injection, even where the logs show nothing wrong.</li>
+            <li>Spots errors that are new or growing, and calls that are getting slower.</li>
+            <li>Sends one short briefing, with each finding ranked by impact, confidence and effort.</li>
+            <li>Calls the registry as its own Platform App, with read-only access.</li>
+          </ul>
+        </div>
+      </article>
+
     </div>
   </section>
 
@@ -381,6 +398,7 @@
       <li><a href="https://github.com/OpenBankProject/OBP-OIDC">OBP-OIDC<span>OpenID Connect provider</span></a></li>
       <li><a href="https://github.com/OpenBankProject/OBP-MCP">OBP-MCP<span>MCP server for AI agents</span></a></li>
       <li><a href="https://github.com/OpenBankProject/OBP-Opey-II">Opey<span>OBP's AI assistant</span></a></li>
+      <li><a href="https://github.com/OpenBankProject/OBP-Sentinel">OBP Senti<span>Agentic security and performance checking</span></a></li>
     </ul>
   </section>
 
@@ -399,7 +417,7 @@
         <img src="img/eu-flag.svg" alt="" width="300" height="200">
         <span>Funded by<br>the European Union</span>
       </a>
-      <p>The OGCR Project has received funding from the European Union's Horizon Europe programme under grant agreement <a href="https://cordis.europa.eu/project/id/101218854">101218854</a>. Find out more about the project at <a href="https://ogcr.eu">ogcr.eu</a>.</p>
+      <p>The OGCR Project has received funding from the European Union's Horizon Europe programme under grant agreement <a href="https://cordis.europa.eu/project/id/101218854">101218854</a>. Find out more about the project at <a href="https://ogcr.eu">ogcr.eu</a>, or see the <a href="https://portal.dcr.ogcr.tesobe.com/">OGCR Sandbox</a>.</p>
     </div>
   </section>
 
@@ -411,8 +429,6 @@
       <span>Built by <a href="https://www.tesobe.com">TESOBE GmbH</a> · Innovating in Berlin since 2004</span>
       <span>Powered by the <a href="https://www.openbankproject.com">Open Bank Project</a></span>
       <span>Open source under the AGPL-3.0</span>
-      <span>OGCR Home page: <a href="https://ogcr.eu">ogcr.eu</a></span>
-      <span>See the <a href="https://portal.dcr.ogcr.tesobe.com/">OGCR Sandbox</a></span>
     </p>
   </footer>
 

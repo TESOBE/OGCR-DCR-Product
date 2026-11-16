@@ -95,8 +95,9 @@ h1,h2,h3{color:var(--ink); font-weight:700; letter-spacing:-.02em; line-height:1
 .btn.primary:hover{background:#335641; color:#ffffff}
 .btn.ghost{border:1px solid rgba(255,255,255,.35); color:#ffffff}
 .btn.ghost:hover{border-color:#ffffff; color:#ffffff}
-.facts{display:flex; flex-wrap:wrap; gap:10px; margin:40px 0 0; padding:0; list-style:none}
-.facts li{padding:6px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.25); font-size:13px; color:#e2edf6}
+.facts{display:flex; flex-wrap:wrap; gap:6px 0; margin:40px 0 0; padding:0; list-style:none}
+.facts li{font-size:14px; color:#c3daed}
+.facts li:not(:last-child)::after{content:"·"; margin:0 12px; color:#6db087}
 
 /* ---- Layout ---- */
 main{max-width:1120px; margin:0 auto; padding:0 24px}

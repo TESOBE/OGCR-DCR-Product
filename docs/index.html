@@ -23,6 +23,7 @@
         <a href="#how">How it works</a>
         <a href="#components">Components</a>
         <a href="#tokens">Tokens</a>
+        <a href="#deploy">Install</a>
         <a href="#contact">Contact</a>
         <a href="https://ogcr-app.dcr.ogcr.tesobe.com/">OGCR Sandbox</a>
         <a href="https://ogcr.eu">ogcr.eu</a>
@@ -75,8 +76,8 @@
       </div>
       <div class="card reveal">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
-        <h3>Separate apps</h3>
-        <p>The registry pages, the marketplace, the Operator Platform and the Certification Platform are separate apps. They log people in with OpenID Connect and call the API.</p>
+        <h3>Easy to connect apps</h3>
+        <p>The registry pages, the marketplace and the Operator and Certification Platforms are separate apps that call the API for the people using them. A service that works on its own, such as the chain cache, connects as a <a href="https://portal.dcr.ogcr.tesobe.com/api-explorer/glossary/Platform%20Apps">Platform App</a>, with only the access it is given.</p>
       </div>
       <div class="card reveal d1">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
@@ -290,6 +291,7 @@
           <p>The tokenizer watches the registry and mints a token on the OGCR chain when a record reaches a verified state. A token carries a snapshot of the record, a link back to it and a hash of it, so anyone can check that the two still match.</p>
           <ul>
             <li>Reads from OBP-API and never writes to it.</li>
+            <li>Will move to Platform App mode, so it reads the registry as itself, with only the access it is given.</li>
             <li>Mints each token exactly once. A token waits until the tokens it depends on exist.</li>
             <li>Reports its health at <code>/healthz</code>.</li>
           </ul>
@@ -448,6 +450,42 @@
       <li><b>One-way services</b>The tokenizer reads the registry and writes to the chain. The chain cache reads the chain and writes to the registry.</li>
       <li><b>Safe to repeat</b>Minting is checked on chain and mirror records are updated in place, so running a service again never creates duplicates.</li>
     </ul>
+  </section>
+
+  <section id="deploy">
+    <div class="sechead"><h2>Install OGCR DCR</h2></div>
+    <p class="intro">You can run the whole OGCR platform yourself, to evaluate it or to run your own registry: on your own servers, or on Kubernetes.</p>
+    <div class="components">
+      <article class="component reveal">
+        <div>
+          <span class="tag">Bare metal</span>
+          <h3>Build from source</h3>
+          <a class="repo-list" href="#components">Every repository is listed under Components</a>
+        </div>
+        <div>
+          <p>Each part has its own repository, and its README explains how to build and run it. Set them up in this order:</p>
+          <ol>
+            <li>Run OBP-API, with PostgreSQL and Redis.</li>
+            <li>Run a login provider: OBP-OIDC, or Keycloak with the OBP Keycloak Provider.</li>
+            <li>Create the registry in OBP-API with OGCR-DynamicEntities. Its setup script creates the space, the Dynamic Entities, the Role Groups, the Dynamic Queries and the Glossary Items.</li>
+            <li>Register OGCR-App as a Consumer and run it. Add the Operator and Certification Platforms the same way.</li>
+            <li>To anchor records on chain, deploy OGCR-Smart-Contracts to an EVM chain, then run ogcr-tokenizer and OGCR-Chain-Cache.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="component reveal">
+        <div>
+          <span class="tag">Kubernetes</span>
+          <h3>Install with Helm</h3>
+          <a class="repo" href="https://github.com/TESOBE/OGCR-Charts">TESOBE/OGCR-Charts</a>
+        </div>
+        <div>
+          <p>Each service is built as a Docker image. The Helm charts in OGCR-Charts install them on your own Kubernetes cluster.</p>
+        </div>
+      </article>
+    </div>
+    <p class="intro help">Need help setting up OBP-API, on your own servers or on Kubernetes? Ask the Open Bank Project community at <a href="https://chat.openbankproject.com">chat.openbankproject.com</a>.</p>
   </section>
 
 

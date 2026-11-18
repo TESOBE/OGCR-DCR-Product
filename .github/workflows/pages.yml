@@ -1,0 +1,48 @@
+# Publishes docs/ to GitHub Pages. Before each deploy it fills the Source code list from the
+# "OGCR Architecture" Glossary Item on OBP-API (scripts/update_source_list.py), so the list
+# is kept in one place. The daily run picks up Glossary changes without a push.
+#
+# Needs: Settings > Pages > Build and deployment > Source: GitHub Actions.
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; a newer run replaces a waiting one.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # If OBP-API cannot be reached, or the Glossary Item is not in the expected form, the
+      # script leaves the page alone and the run shows a warning. The site then keeps the
+      # list committed in docs/index.html.
+      - name: Fill the Source code list from the Glossary
+        continue-on-error: true
+        run: python3 scripts/update_source_list.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

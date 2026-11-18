@@ -17,7 +17,19 @@ Then go to http://localhost:8000.
 
 ## Publishing
 
-In the repository's settings on GitHub, under Pages, choose to deploy from the main branch and the `docs` folder. The site is served at https://ogcr-dcr-product.tesobe.com, set in `docs/CNAME`.
+The workflow `.github/workflows/pages.yml` publishes `docs/` to GitHub Pages on every push to main, once a day, and when you run it by hand. In the repository's settings on GitHub, under Pages, set the source to GitHub Actions. The site is served at https://ogcr-dcr-product.tesobe.com, set in `docs/CNAME` and in the Pages settings.
+
+## The Source code list
+
+The list of repositories is kept in one place: the "OGCR Architecture" Glossary Item on OBP-API. Its source is `architecture_glossary_item.md` in OGCR-DynamicEntities, and AI agents read it through the OBP-MCP server. Before each deploy, the workflow runs `scripts/update_source_list.py`, which reads the item from https://dcr.ogcr.tesobe.com and writes its "Source code" section into `docs/index.html`, between the `source-list` markers.
+
+To add or change a repository, edit the Glossary Item, not the page. Each repository is one line in the form `- [Name](link): what it does`. The site picks up the change at the next deploy, at the latest the next day.
+
+If OBP-API cannot be reached, or a line has no description, the script changes nothing and the run shows a warning, so the site keeps the list committed in `docs/index.html`. To refresh that copy from a local file:
+
+```sh
+python3 scripts/update_source_list.py --markdown ../OGCR-DynamicEntities/architecture_glossary_item.md
+```
 
 ## What is here
 

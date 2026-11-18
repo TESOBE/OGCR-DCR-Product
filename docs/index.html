@@ -23,9 +23,8 @@
         <a href="#how">How it works</a>
         <a href="#components">Components</a>
         <a href="#tokens">Tokens</a>
-        <a href="#source">Source code</a>
-        <a href="#talk">Contact</a>
-        <a href="https://portal.dcr.ogcr.tesobe.com/">OGCR Sandbox</a>
+        <a href="#contact">Contact</a>
+        <a href="https://ogcr-app.dcr.ogcr.tesobe.com/">OGCR Sandbox</a>
         <a href="https://ogcr.eu">ogcr.eu</a>
       </nav>
     </div>
@@ -35,7 +34,8 @@
     <div class="actions">
       <a class="btn ghost" href="#how">See how it works</a>
       <a class="btn ghost" href="https://apiexplorer.dcr.ogcr.tesobe.com/?content=dynamic&amp;bank_id=ogcr">Browse the registry APIs</a>
-      <a class="btn primary" href="https://portal.dcr.ogcr.tesobe.com/">Try the OGCR Sandbox</a>
+      <a class="btn ghost" href="https://portal.dcr.ogcr.tesobe.com/">OGCR Portal</a>
+      <a class="btn primary" href="https://ogcr-app.dcr.ogcr.tesobe.com/">Try the OGCR Sandbox</a>
     </div>
     <ul class="facts">
       <li>Built on OBP-API</li>
@@ -51,27 +51,27 @@
 
   <section id="goals">
     <div class="sechead"><h2>Designed to be open</h2></div>
-    <p class="intro">The registry is a set of small, separate services around one secure API. Each part does one job, and each can be replaced or extended without touching the others.</p>
+    <p class="intro">The registry is made of separate services that all work through one secure API. Each service has one job. You can replace or extend any of them without changing the others.</p>
     <div class="cards">
       <div class="card reveal">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H6a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h2"/><path d="M16 3h2a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2"/></svg></span>
         <h3>API first</h3>
-        <p>Every registry operation is a REST call with OpenAPI documentation. Every app and service uses the same APIs.</p>
+        <p>Every registry operation is a REST call with OpenAPI documentation, used by every app and service. Role-based access control (RBAC) checks each call, and Role Groups make access easy to grant and review.</p>
       </div>
       <div class="card reveal d1">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></span>
-        <h3>A data model you can change</h3>
+        <h3>Easy to evolve data model</h3>
         <p>The data model lives in a spreadsheet and is built at runtime, with its endpoints, Roles and indexes. Changing it needs no code change or redeploy.</p>
       </div>
       <div class="card reveal d2">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+        <h3>Backed by a blockchain</h3>
+        <p>Verified records are minted as tokens on the OGCR blockchain. Each token holds a hash of its record, so anyone can check that the two still match.</p>
+      </div>
+      <div class="card reveal d3">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 10h4v4h-4z"/></svg></span>
         <h3>Ready for AI agents</h3>
         <p>Opey and the OBP-MCP server let AI agents read and act on the registry, limited by the same Roles as the person they work for.</p>
-      </div>
-      <div class="card reveal d3">
-        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
-        <h3>Roles on every call</h3>
-        <p>Each operation on each entity needs a Role. People get Roles through Role Groups, so access is easy to grant and easy to review.</p>
       </div>
       <div class="card reveal">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
@@ -99,7 +99,7 @@
 
   <section id="how">
     <div class="sechead"><h2>How it fits together</h2></div>
-    <p class="intro">OBP-API is the one gateway to the registry. Apps and AI agents call it on behalf of people. Two small services connect it to the OGCR blockchain: one mints tokens, the other mirrors them back.</p>
+    <p class="intro">OBP-API is the gateway to the registry. Apps and AI agents call it on behalf of people. Two services connect it to the OGCR blockchain: one mints tokens, the other mirrors them back.</p>
     <figure class="diagram reveal" style="margin:0">
       <svg viewBox="0 0 960 560" role="img" aria-labelledby="dg-title dg-desc">
         <title id="dg-title">OGCR registry architecture</title>
@@ -194,7 +194,7 @@
 
   <section id="components">
     <div class="sechead"><h2>The components</h2></div>
-    <p class="intro">Each part of the registry is its own open source repository, with one clear job.</p>
+    <p class="intro">Each part of the registry is its own open source repository.</p>
     <div class="components">
 
       <article class="component reveal">
@@ -210,6 +210,38 @@
             <li>The registry lives in its own Space, <code>ogcr</code>, kept apart from anything else on the same instance.</li>
             <li>Indexes and Dynamic Queries serve filtered and joined views, such as the public registry.</li>
             <li>Records can link to each other, so an activity knows its parcels, operator and certificates.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="component reveal">
+        <div>
+          <span class="tag">Certification bodies</span>
+          <h3>Certification Platform</h3>
+          <a class="repo" href="https://codeberg.org/OGCR-project/ogcr-certification-platform">OGCR-project/ogcr-certification-platform</a>
+        </div>
+        <div>
+          <p>Certification bodies verify and certify carbon activities. The Certification Platform, built by MultiOne, is their application, and a client of OBP-API.</p>
+          <ul>
+            <li>It is registered as a Consumer of OBP-API, and reads and writes registry records through the endpoints generated from the Dynamic Entities.</li>
+            <li>What each person may see and do is set by their Roles in the registry, not by the app.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="component reveal">
+        <div>
+          <span class="tag">Operators</span>
+          <h3>Operator Platform</h3>
+          <a class="repo" href="https://github.com/OGCR-GILAB/operator-platform">OGCR-GILAB/operator-platform</a><br>
+          <a class="repo" href="https://github.com/OGCR-GILAB/operator-platform-api">OGCR-GILAB/operator-platform-api</a>
+        </div>
+        <div>
+          <p>Operators run carbon activities. The Operator Platform, built by OGCR-GILAB, is their application, and a client of OBP-API.</p>
+          <ul>
+            <li>A React app with its own API service. Operators prepare their projects there, then submit them to the registry through OBP-API.</li>
+            <li>People's accounts live in the registry, and what each person may see and do is set by their Roles there.</li>
+            <li>Any other app can join the registry the same way: register a Consumer, log people in, and call the API.</li>
           </ul>
         </div>
       </article>
@@ -243,27 +275,6 @@
             <li>People log in with OpenID Connect. The app then reads and writes through OBP-API with their token, and never writes directly to the chain.</li>
             <li>The marketplace lists activities that already exist in the registry. Operators prove who they are, then add only their own marketing and commercial details.</li>
             <li>Registry facts, such as the activity type, location, dates and methodologies, are always shown read-only, straight from the registry.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="component reveal">
-        <div>
-          <span class="tag">Partner apps</span>
-          <h3>Operator and Certification Platforms</h3>
-          <a class="repo" href="https://github.com/OGCR-GILAB/operator-platform">OGCR-GILAB/operator-platform</a><br>
-          <a class="repo" href="https://github.com/OGCR-GILAB/operator-platform-api">OGCR-GILAB/operator-platform-api</a><br>
-          <a class="repo" href="https://codeberg.org/OGCR-project/ogcr-certification-platform">OGCR-project/ogcr-certification-platform</a>
-        </div>
-        <div>
-          <p>Operators run carbon activities. Certification bodies verify and certify them. Each group has its own application, built by an OGCR partner, and both are clients of OBP-API.</p>
-          <ul>
-            <li>OGCR-GILAB's Operator Platform is a React app with its own API service. Operators prepare their projects there, then submit them to the registry through OBP-API.</li>
-            <li>The ogcr-certification-platform, by MultiOne, is registered as a Consumer of OBP-API. It reads and writes registry records through the endpoints generated from the Dynamic Entities.</li>
-            <li>People log in through the registry's OpenID Connect provider, OBP-OIDC or Keycloak, and the app calls OBP-API with their token.</li>
-            <li>What each person may see and do is set by their Roles in the registry, not by the app.</li>
-            <li>Services that work without a person, such as the chain cache, use the OAuth2 client credentials grant as their own Platform App.</li>
-            <li>Any other app can join the same way: register a client, log people in, and call the API.</li>
           </ul>
         </div>
       </article>
@@ -318,15 +329,64 @@
 
       <article class="component reveal">
         <div>
+          <span class="tag">Login</span>
+          <h3>OBP-OIDC and Keycloak</h3>
+          <a class="repo" href="https://github.com/OpenBankProject/OBP-OIDC">OpenBankProject/OBP-OIDC</a><br>
+          <a class="repo" href="https://github.com/OpenBankProject/OBP-Keycloak-Provider">OpenBankProject/OBP-Keycloak-Provider</a>
+        </div>
+        <div>
+          <p>People log in to the registry with OpenID Connect, through either OBP-OIDC or Keycloak. Apps get the tokens they use to call OBP-API from the same place.</p>
+          <ul>
+            <li>OBP-OIDC is OBP's own OpenID Connect provider.</li>
+            <li>The OBP Keycloak Provider lets Keycloak check people's passwords against OBP-API, and take its clients from the Consumers registered there.</li>
+            <li>Either way, there is one list of people and one list of apps, both kept in OBP-API.</li>
+            <li>Apps that act for a person use the authorisation code grant. Services that act as themselves use the client credentials grant.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="component reveal">
+        <div>
           <span class="tag">AI agents</span>
           <h3>Opey and OBP-MCP</h3>
-          <a class="repo" href="https://github.com/OpenBankProject/OBP-MCP">OpenBankProject/OBP-MCP</a>
+          <a class="repo" href="https://github.com/OpenBankProject/OBP-MCP">OpenBankProject/OBP-MCP</a><br>
+          <a class="repo" href="https://github.com/OpenBankProject/OBP-Opey-II">OpenBankProject/OBP-Opey-II</a>
         </div>
         <div>
           <p>The OBP-MCP server lets AI agents find and call the registry's endpoints and read its Glossary. Opey, OBP's AI assistant, uses it to answer questions about the registry and to help build pages.</p>
           <ul>
             <li>Claude Code, Claude Desktop and IDE agents connect with the user's own token.</li>
             <li>Opey connects with a consent the user approves, so it can see and do only what that user's Roles allow.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="component reveal">
+        <div>
+          <span class="tag">Administration</span>
+          <h3>OBP Portal and API Manager</h3>
+          <a class="repo" href="https://github.com/OpenBankProject/OBP-Frontend">OpenBankProject/OBP-Frontend</a>
+        </div>
+        <div>
+          <p>Two web apps for the people who run the registry and the developers who build on it.</p>
+          <ul>
+            <li>In the Portal, developers register their apps as Consumers and get the credentials to call OBP-API.</li>
+            <li>In API Manager, administrators manage users, Roles, Consumers and Dynamic Entities.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="component reveal">
+        <div>
+          <span class="tag">Documentation</span>
+          <h3>API Explorer II</h3>
+          <a class="repo" href="https://github.com/OpenBankProject/API-Explorer-II">OpenBankProject/API-Explorer-II</a>
+        </div>
+        <div>
+          <p>API Explorer II lists every endpoint of OBP-API, with its documentation, and lets you try it.</p>
+          <ul>
+            <li>It includes the endpoints generated for the registry's Dynamic Entities. <a href="https://apiexplorer.dcr.ogcr.tesobe.com/?content=dynamic&amp;bank_id=ogcr">Browse the registry's endpoints</a>.</li>
+            <li>You log in to try an endpoint, and it runs with your own Roles.</li>
           </ul>
         </div>
       </article>
@@ -390,57 +450,21 @@
   </section>
 
 
-  <section id="source">
-    <div class="sechead"><h2>Source code</h2></div>
-    <p class="intro">Everything is open source. Read it, run it, and build on it.</p>
-    <ul class="repos">
-      <!-- source-list:start -->
-      <li><a href="https://github.com/OpenBankProject/OBP-API">OBP-API<span>The registry gateway</span></a></li>
-      <li><a href="https://github.com/OpenBankProject/OGCR-DynamicEntities">OGCR-DynamicEntities<span>Builds the data model</span></a></li>
-      <li><a href="https://github.com/OpenBankProject/OGCR-App">OGCR-App<span>Registry pages and marketplace</span></a></li>
-      <li><a href="https://github.com/OGCR-GILAB/operator-platform">OGCR-GILAB Operator Platform<span>App for activity operators</span></a></li>
-      <li><a href="https://github.com/OGCR-GILAB/operator-platform-api">OGCR-GILAB Operator Platform API<span>The Operator Platform's API service</span></a></li>
-      <li><a href="https://codeberg.org/OGCR-project/ogcr-certification-platform">ogcr-certification-platform<span>App for certification bodies</span></a></li>
-      <li><a href="https://github.com/TESOBE/ogcr-tokenizer">ogcr-tokenizer<span>Mints verified records</span></a></li>
-      <li><a href="https://github.com/OpenBankProject/OGCR-Smart-Contracts">OGCR-Smart-Contracts<span>The token contracts</span></a></li>
-      <li><a href="https://github.com/TESOBE/OGCR-chain-cache">OGCR-Chain-Cache<span>Mirrors tokens into the registry</span></a></li>
-      <li><a href="https://github.com/OpenBankProject/OBP-OIDC">OBP-OIDC<span>OpenID Connect provider</span></a></li>
-      <li><a href="https://github.com/OpenBankProject/OBP-MCP">OBP-MCP server<span>MCP server for AI agents</span></a></li>
-      <li><a href="https://github.com/OpenBankProject/OBP-Opey-II">Opey Agent<span>OBP's AI assistant</span></a></li>
-      <li><a href="https://github.com/OpenBankProject/OBP-Sentinel">OBP Senti<span>Agentic security and performance checking</span></a></li>
-      <li><a href="https://github.com/OpenBankProject/OBP-Frontend">OBP Portal and API Manager<span>Consumer registration and administration</span></a></li>
-      <li><a href="https://github.com/OpenBankProject/API-Explorer-II">API Explorer II<span>Browse and try the registry's endpoints</span></a></li>
-      <!-- source-list:end -->
-    </ul>
-  </section>
-
-
-  <section id="talk" class="reveal">
-    <div class="sechead"><h2>Talk to us</h2></div>
-    <div class="contact">
-      <p>Running a carbon registry, certifying activities or building a marketplace? Tell us what you need, and we will show you the OGCR registry working with your own data model and apps.</p>
-      <p class="mailto"><a href="mailto:contact@tesobe.com?subject=OGCR%20Digital%20Carbon%20Registry">contact@tesobe.com</a></p>
-    </div>
-  </section>
-
   <section id="funding" class="reveal">
     <div class="funding">
       <a class="eu" href="https://cordis.europa.eu/project/id/101218854" title="The OGCR Project on CORDIS">
         <img src="img/eu-flag.svg" alt="" width="300" height="200">
         <span>Funded by<br>the European Union</span>
       </a>
-      <p>The OGCR Project has received funding from the European Union's Horizon Europe programme under grant agreement <a href="https://cordis.europa.eu/project/id/101218854">101218854</a>. Find out more about the project at <a href="https://ogcr.eu">ogcr.eu</a>, or see the <a href="https://portal.dcr.ogcr.tesobe.com/">OGCR Sandbox</a>.</p>
+      <p>The OGCR Project has received funding from the European Union's Horizon Europe programme under grant agreement <a href="https://cordis.europa.eu/project/id/101218854">101218854</a>. Find out more about the project at <a href="https://ogcr.eu">ogcr.eu</a>, or see the <a href="https://ogcr-app.dcr.ogcr.tesobe.com/">OGCR Sandbox</a>.</p>
     </div>
   </section>
 
   <footer>
-    <a class="maker" href="https://www.tesobe.com">
-      <img alt="TESOBE" src="img/tesobe-logo.png" width="400" height="114">
-    </a>
     <p class="stats">
-      <span>Built by <a href="https://www.tesobe.com">TESOBE GmbH</a> · Innovating in Berlin since 2004</span>
-      <span>Powered by the <a href="https://www.openbankproject.com">Open Bank Project</a></span>
-      <span>Open source under the AGPL-3.0</span>
+      <span><a href="https://www.tesobe.com">TESOBE GmbH</a></span>
+      <span id="contact">Contact: <a href="mailto:contact@tesobe.com?subject=OGCR%20Digital%20Carbon%20Registry">contact@tesobe.com</a></span>
+      <span><a href="https://github.com/TESOBE/OGCR-DCR-PRODUCT">This page's source</a></span>
     </p>
   </footer>
 

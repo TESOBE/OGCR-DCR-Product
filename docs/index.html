@@ -99,7 +99,7 @@
 
 
   <section id="how">
-    <div class="sechead"><h2>How it fits together</h2></div>
+    <div class="sechead" id="architecture"><h2>How it fits together</h2></div>
     <p class="intro">OBP-API is the gateway to the registry. Apps and AI agents call it on behalf of people. Two services connect it to the OGCR blockchain: one mints tokens, the other mirrors them back.</p>
     <p class="intro">The same overview is in the <a href="https://portal.dcr.ogcr.tesobe.com/api-explorer/glossary/OGCR%20Architecture">OGCR Architecture</a> Glossary Item, where AI agents can read it through the OBP-MCP server.</p>
     <figure class="diagram reveal" style="margin:0">
@@ -220,7 +220,8 @@
         <div>
           <span class="tag">Certification bodies</span>
           <h3>Certification Platform</h3>
-          <a class="repo" href="https://codeberg.org/OGCR-project/ogcr-certification-platform">OGCR-project/ogcr-certification-platform</a>
+          <a class="repo" href="https://codeberg.org/OGCR-project/ogcr-certification-platform">OGCR-project/ogcr-certification-platform</a><br>
+          <a class="readme" href="https://codeberg.org/OGCR-project/ogcr-certification-platform#readme">README</a>
         </div>
         <div>
           <p>Certification bodies verify and certify carbon activities. The Certification Platform, built by MultiOne, is their application, and a client of OBP-API.</p>
@@ -236,7 +237,9 @@
           <span class="tag">Operators</span>
           <h3>Operator Platform</h3>
           <a class="repo" href="https://github.com/OGCR-GILAB/operator-platform">OGCR-GILAB/operator-platform</a><br>
-          <a class="repo" href="https://github.com/OGCR-GILAB/operator-platform-api">OGCR-GILAB/operator-platform-api</a>
+          <a class="readme" href="https://github.com/OGCR-GILAB/operator-platform#readme">README</a><br>
+          <a class="repo" href="https://github.com/OGCR-GILAB/operator-platform-api">OGCR-GILAB/operator-platform-api</a><br>
+          <a class="readme" href="https://github.com/OGCR-GILAB/operator-platform-api#readme">README</a>
         </div>
         <div>
           <p>Operators run carbon activities. The Operator Platform, built by OGCR-GILAB, is their application, and a client of OBP-API.</p>
@@ -463,13 +466,13 @@
           <a class="repo-list" href="#components">Every repository is listed under Components</a>
         </div>
         <div>
-          <p>Each part has its own repository, and its README explains how to build and run it. Set them up in this order:</p>
+          <p>Each part has its own repository, and its README explains how to build and run it. Set them up in this order, following the README each step links to:</p>
           <ol>
-            <li>Run OBP-API, with PostgreSQL and Redis.</li>
-            <li>Run a login provider: OBP-OIDC, or Keycloak with the OBP Keycloak Provider.</li>
-            <li>Create the registry in OBP-API with OGCR-DynamicEntities. Its setup script creates the space, the Dynamic Entities, the Role Groups, the Dynamic Queries and the Glossary Items.</li>
-            <li>Register OGCR-App as a Consumer and run it. Add the Operator and Certification Platforms the same way.</li>
-            <li>To anchor records on chain, deploy OGCR-Smart-Contracts to an EVM chain, then run ogcr-tokenizer and OGCR-Chain-Cache.</li>
+            <li>Run <a href="https://github.com/OpenBankProject/OBP-API#readme">OBP-API</a>, with PostgreSQL and Redis.</li>
+            <li>Run a login provider: <a href="https://github.com/OpenBankProject/OBP-OIDC#readme">OBP-OIDC</a>, or Keycloak with the <a href="https://github.com/OpenBankProject/OBP-Keycloak-Provider#readme">OBP Keycloak Provider</a>.</li>
+            <li>Create the registry in OBP-API with <a href="https://github.com/OpenBankProject/OGCR-DynamicEntities#readme">OGCR-DynamicEntities</a>. Its setup script creates the space, the Dynamic Entities, the Role Groups, the Dynamic Queries and the Glossary Items.</li>
+            <li>Register <a href="https://github.com/OpenBankProject/OGCR-App#readme">OGCR-App</a> as a Consumer and run it. Add the <a href="https://github.com/OGCR-GILAB/operator-platform#readme">Operator Platform</a> (with its <a href="https://github.com/OGCR-GILAB/operator-platform-api#readme">API service</a>) and the <a href="https://codeberg.org/OGCR-project/ogcr-certification-platform#readme">Certification Platform</a> the same way.</li>
+            <li>To anchor records on chain, deploy <a href="https://github.com/OpenBankProject/OGCR-Smart-Contracts#readme">OGCR-Smart-Contracts</a> to an EVM chain, then run <a href="https://github.com/TESOBE/ogcr-tokenizer#readme">ogcr-tokenizer</a> and <a href="https://github.com/TESOBE/OGCR-chain-cache#readme">OGCR-Chain-Cache</a>.</li>
           </ol>
         </div>
       </article>
@@ -485,9 +488,17 @@
         </div>
       </article>
     </div>
-    <p class="intro help">Need help setting up OBP-API, on your own servers or on Kubernetes? Ask the Open Bank Project community at <a href="https://chat.openbankproject.com">chat.openbankproject.com</a>.</p>
   </section>
 
+
+  <section id="contact">
+    <div class="sechead"><h2>Contact</h2></div>
+    <ul class="rules reveal">
+      <li><b>Help with OBP-API</b>Setting up OBP-API, on your own servers or on Kubernetes? Ask the Open Bank Project community at <a href="https://chat.openbankproject.com">chat.openbankproject.com</a>.</li>
+      <li><b>TESOBE</b>To talk to TESOBE about the registry, use the <a href="https://www.tesobe.com/contact/">contact form</a>, or email <a href="mailto:contact@tesobe.com?subject=OGCR%20Digital%20Carbon%20Registry">contact@tesobe.com</a>.</li>
+      <li><b>The OGCR Project</b>For the project, its partners and its news, see <a href="https://ogcr.eu">ogcr.eu</a>.</li>
+    </ul>
+  </section>
 
   <section id="funding" class="reveal">
     <div class="funding">
@@ -502,7 +513,7 @@
   <footer>
     <p class="stats">
       <span><a href="https://www.tesobe.com">TESOBE GmbH</a></span>
-      <span id="contact">Contact: <a href="mailto:contact@tesobe.com?subject=OGCR%20Digital%20Carbon%20Registry">contact@tesobe.com</a></span>
+      <span>Contact: <a href="mailto:contact@tesobe.com?subject=OGCR%20Digital%20Carbon%20Registry">contact@tesobe.com</a></span>
       <span><a href="https://github.com/TESOBE/OGCR-DCR-PRODUCT">This page's source</a></span>
     </p>
   </footer>

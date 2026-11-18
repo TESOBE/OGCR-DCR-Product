@@ -76,7 +76,7 @@
       <div class="card reveal">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
         <h3>Separate apps</h3>
-        <p>The registry pages, the marketplace and the Operator and Certifier Platforms are separate apps. They log people in with OpenID Connect and call the API.</p>
+        <p>The registry pages, the marketplace, the Operator Platform and the Certification Platform are separate apps. They log people in with OpenID Connect and call the API.</p>
       </div>
       <div class="card reveal d1">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
@@ -103,7 +103,7 @@
     <figure class="diagram reveal" style="margin:0">
       <svg viewBox="0 0 960 560" role="img" aria-labelledby="dg-title dg-desc">
         <title id="dg-title">OGCR registry architecture</title>
-        <desc id="dg-desc">A schema spreadsheet feeds OGCR-DynamicEntities, which builds the data model in OBP-API. OGCR-App, the Operator Platform, the Certifier Platform and AI agents call OBP-API over OAuth2 and OpenID Connect. The ogcr-tokenizer reads verified records from OBP-API and mints tokens on the OGCR chain. OGCR-Chain-Cache reads the tokens from the chain and writes mirror records back into OBP-API.</desc>
+        <desc id="dg-desc">A schema spreadsheet feeds OGCR-DynamicEntities, which builds the data model in OBP-API. OGCR-App, the Operator Platform (OGCR-GILAB), the Certification Platform (ogcr-certification-platform) and AI agents call OBP-API over OAuth2 and OpenID Connect. The ogcr-tokenizer reads verified records from OBP-API and mints tokens on the OGCR chain. OGCR-Chain-Cache reads the tokens from the chain and writes mirror records back into OBP-API.</desc>
 
         <!-- Wires, drawn first so the boxes sit on top -->
         <path class="dg-wire" d="M104 80 V116"/>
@@ -141,7 +141,7 @@
         <text class="dg-sub" x="480" y="64" text-anchor="middle">for activity operators</text>
 
         <rect class="dg-app" x="584" y="20" width="168" height="60" rx="10"/>
-        <text class="dg-lbl" x="668" y="46" text-anchor="middle">Certifier Platform</text>
+        <text class="dg-lbl" x="668" y="46" text-anchor="middle">Certification Platform</text>
         <text class="dg-sub" x="668" y="64" text-anchor="middle">for certification bodies</text>
 
         <rect class="dg-box" x="772" y="20" width="168" height="60" rx="10"/>
@@ -250,11 +250,16 @@
       <article class="component reveal">
         <div>
           <span class="tag">Partner apps</span>
-          <h3>Operator and Certifier Platforms</h3>
+          <h3>Operator and Certification Platforms</h3>
+          <a class="repo" href="https://github.com/OGCR-GILAB/operator-platform">OGCR-GILAB/operator-platform</a><br>
+          <a class="repo" href="https://github.com/OGCR-GILAB/operator-platform-api">OGCR-GILAB/operator-platform-api</a><br>
+          <a class="repo" href="https://codeberg.org/OGCR-project/ogcr-certification-platform">OGCR-project/ogcr-certification-platform</a>
         </div>
         <div>
-          <p>Operators run carbon activities. Certification bodies verify and certify them. Each group has its own application, and both connect to the registry in the same open way.</p>
+          <p>Operators run carbon activities. Certification bodies verify and certify them. Each group has its own application, built by an OGCR partner, and both are clients of OBP-API.</p>
           <ul>
+            <li>OGCR-GILAB's Operator Platform is a React app with its own API service. Operators prepare their projects there, then submit them to the registry through OBP-API.</li>
+            <li>The ogcr-certification-platform, by MultiOne, is registered as a Consumer of OBP-API. It reads and writes registry records through the endpoints generated from the Dynamic Entities.</li>
             <li>People log in through the registry's OpenID Connect provider, OBP-OIDC or Keycloak, and the app calls OBP-API with their token.</li>
             <li>What each person may see and do is set by their Roles in the registry, not by the app.</li>
             <li>Services that work without a person, such as the chain cache, use the OAuth2 client credentials grant as their own Platform App.</li>
@@ -392,6 +397,8 @@
       <li><a href="https://github.com/OpenBankProject/OBP-API">OBP-API<span>The registry gateway</span></a></li>
       <li><a href="https://github.com/OpenBankProject/OGCR-DynamicEntities">OGCR-DynamicEntities<span>Builds the data model</span></a></li>
       <li><a href="https://github.com/OpenBankProject/OGCR-App">OGCR-App<span>Registry pages and marketplace</span></a></li>
+      <li><a href="https://github.com/OGCR-GILAB/operator-platform">OGCR-GILAB Operator Platform<span>App for activity operators</span></a></li>
+      <li><a href="https://codeberg.org/OGCR-project/ogcr-certification-platform">ogcr-certification-platform<span>App for certification bodies</span></a></li>
       <li><a href="https://github.com/TESOBE/ogcr-tokenizer">ogcr-tokenizer<span>Mints verified records</span></a></li>
       <li><a href="https://github.com/OpenBankProject/OGCR-Smart-Contracts">OGCR-Smart-Contracts<span>The token contracts</span></a></li>
       <li><a href="https://github.com/TESOBE/OGCR-chain-cache">OGCR-Chain-Cache<span>Mirrors tokens into the registry</span></a></li>

@@ -1,6 +1,6 @@
 # OGCR-DCR-PRODUCT
 
-The public website for the OGCR Digital Carbon Registry (DCR). It shows how the registry is built: OBP-API and its Dynamic Entities, OGCR-DynamicEntities, OGCR-App, the Operator and Certifier Platforms, ogcr-tokenizer, OGCR-Smart-Contracts and OGCR-Chain-Cache.
+The public website for the OGCR Digital Carbon Registry (DCR). It shows how the registry is built: OBP-API and its Dynamic Entities, OGCR-DynamicEntities, OGCR-App, the Operator Platform (OGCR-GILAB) and the Certification Platform (ogcr-certification-platform), which are both clients of the API, ogcr-tokenizer, OGCR-Smart-Contracts and OGCR-Chain-Cache.
 
 The site is plain HTML and CSS, with no build step. Everything published is in `docs/`, so GitHub Pages can serve that folder directly.
 

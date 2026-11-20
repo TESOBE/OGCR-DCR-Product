@@ -294,7 +294,7 @@
           <p>The tokenizer watches the registry and mints a token on the OGCR chain when a record reaches a verified state. A token carries a snapshot of the record, a link back to it and a hash of it, so anyone can check that the two still match.</p>
           <ul>
             <li>Reads from OBP-API and never writes to it.</li>
-            <li>Will move to Platform App mode, so it reads the registry as itself, with only the access it is given.</li>
+            <li>Is a Platform App: it reads the registry as itself, with only the access it is given.</li>
             <li>Mints each token exactly once. A token waits until the tokens it depends on exist.</li>
             <li>Reports its health at <code>/healthz</code>.</li>
           </ul>
